@@ -1,0 +1,30 @@
+Meal Recipe App
+
+Purpose : a food recipe app that helps users discover meals by area or ingredients, view detailed recipes, save their favourites and also random meal .
+
+
+Core Features:
+Search meals by name
+filter meals by area
+click a mean to see full recipe details
+display ingredients , instructions and yt video maybe
+
+
+Nice to have (chatgpt)
+save fav meals (local)
+filter/search by ingredient or category
+surprise me (random meal)
+dark mode or theme switcher
+
+
+plan the app structure
+App
+├── Header (search bar, nav)
+├── HomePage
+│   ├── AreaSelector
+│   ├── SearchResults (list of MealCard)
+│       └── MealCard
+├── MealDetail (shows when user clicks a meal)
+├── FavoritesPage (optional)
+└── Footer
+
