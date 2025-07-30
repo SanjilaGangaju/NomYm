@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Blog from './components/blog';
+import MealRecipe from './components/mealRecipe';
+import RecipeDetail from './components/RecipeDetail';
 const App = () => {
   const [isdarkOn, setisdarkOn] = useState(false);
   return (
@@ -15,6 +17,7 @@ const App = () => {
           <Route path="/" element={<MealsDisplay isdarkOn={isdarkOn}></MealsDisplay>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
+         <Route path="/recipe/:id" element={<RecipeDetail></RecipeDetail>}></Route>
         </Routes>
       </Router>
     

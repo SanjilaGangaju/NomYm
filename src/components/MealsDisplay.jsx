@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import MealRecipe from './mealRecipe';
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
+
+import { useNavigate } from 'react-router-dom';
 const MealsDisplay = ({isdarkOn}) => {
     const [meals, setmeals] = useState([]);
     const [area, setArea] = useState("american");
-    
-    const [isSelected, setisSelected] = useState(false);
-    const [idSelected, setidSelected] = useState("");
-    const [recipe, setRecipe] = useState([]);
+    const navigate = useNavigate();
    useEffect(() => {
      const fetchDataApi = async()=>{
            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
@@ -30,27 +28,7 @@ const MealsDisplay = ({isdarkOn}) => {
     const handleSurpriseMe = ()=>{
         randomMeal();
     }
-
-    const recipeOfMeal = async(mealId)=>{
-       const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-      const data = await response.json();
-     
-      setRecipe(data.meals);
-    
       
-    }
-   const handleMealClick= (event)=>{
-      const  mealId= event.target.id;
-  
-      setisSelected(true);
-      setidSelected(mealId);
-      recipeOfMeal(mealId);
-
-
-   }
-    
-   
-    
     
   return (
     <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-10 flex-col items-center gap-5 py-2'>
@@ -61,7 +39,7 @@ const MealsDisplay = ({isdarkOn}) => {
 
           </div>
        </div>
-        {!isSelected?(
+        
         <div className='meal-class-list flex flex-col gap-5'>
            <h2 className='text-xl opacity-70 text-center  font-bold' style={{color:isdarkOn?"white":"black"}}>Search By Your Area</h2>
            <div className='flex gap-4 items-end justify-center'>
@@ -78,7 +56,7 @@ const MealsDisplay = ({isdarkOn}) => {
         <div className='p-3 text-black font-semibold text-center grid grid-cols-3 gap-10 mt-6'>
            
             {meals.map(meal=><div className='max-w-60 grid gap-1 rounded-xl border border-none bg-lime-50  capitalize overflow-hidden' key={meal.idMeal}>
-               <div className='text-black rounded'><img clasName="object-cover rounded" src={meal.strMealThumb}></img></div>
+               <div className='text-black rounded'><img className="object-cover rounded" src={meal.strMealThumb}></img></div>
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
               <div className='pb-5 flex items-center justify-center'>
                   <button id={meal.idMeal} onClick={(e)=>handleMealClick(e)} className='bg-yellow-200 w-1/2 py-2 text-center text-xs rounded-full'>View Details</button>
@@ -86,9 +64,7 @@ const MealsDisplay = ({isdarkOn}) => {
               </div>
             </div>)}
         </div>
-        </div>):(
-           <MealRecipe recipe={recipe} ></MealRecipe>
-        )}
+        </div>
         
     </div>
   )
