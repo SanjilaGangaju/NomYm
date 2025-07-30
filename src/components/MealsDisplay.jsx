@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import MealRecipe from './mealRecipe';
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
-
-const MealsDisplay = () => {
+const MealsDisplay = ({isdarkOn}) => {
     const [meals, setmeals] = useState([]);
     const [area, setArea] = useState("american");
-    const [isOn, setisOn] = useState(false);
+    
     const [isSelected, setisSelected] = useState(false);
     const [idSelected, setidSelected] = useState("");
     const [recipe, setRecipe] = useState([]);
@@ -53,29 +53,37 @@ const MealsDisplay = () => {
     
     
   return (
-    <div style={{backgroundColor: isOn?"black":"white"}} className='flex px-6 flex-col items-center justify-center py-6'>
-        <button  onClick={()=>{setisOn(!isOn)}} style={{backgroundColor: isOn?"white":"black",
-        color: isOn?"black":"white"}} className='bg-red-200 rounded py-1 px-2'>Dark Mode: {isOn?"ON": "OFF"}</button>
-        <h1 className='text-3xl font-semibold font-nerko-one'>NomYm: Food Recipe At Your hand</h1>
+    <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-10 flex-col items-center gap-5 py-2'>
+       <div className='bg-lime-50 overflow-hidden rounded-xl flex  items-center justify-center h-60 '>
+        <h1 className='text-3xl pl-5 font-serif'>Explore <span className='text-yellow-300'>Delicious</span> Recipes From All Around The World With NomYumm!</h1>
+          <div>
+          <img className='outline-none object-top-center border-none'  src="src\components\hero-image2.png"></img>
+
+          </div>
+       </div>
         {!isSelected?(
-        <div className='meal-class-list'>
-           <div className='flex gap-2'>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("american")}>American</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("canadian")}>Canadian</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("italian")}>Italian</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("indian")}>Indian</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("british")}>British</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={()=>setArea("japanese")}>Japanese</button>
-            <button className="rounded bg-amber-600 py-1 px-2" onClick={handleSurpriseMe}>Suprise Me</button>
+        <div className='meal-class-list flex flex-col gap-5'>
+           <h2 className='text-xl opacity-70 text-center  font-bold' style={{color:isdarkOn?"white":"black"}}>Search By Your Area</h2>
+           <div className='flex gap-4 items-end justify-center'>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("american")}>American</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("canadian")}>Canadian</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("italian")}>Italian</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("indian")}>Indian</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("british")}>British</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={()=>setArea("japanese")}>Japanese</button>
+            <button className="bg-lime-100 border border-yellow-50 px-4 py-1 text-xs  font-serif rounded-full hover:bg-lime-200" onClick={handleSurpriseMe}>Suprise Me</button>
 
 
             </div>
-        <div className='bg-amber-900  rounded p-6 text-black font-semibold text-center grid grid-cols-4 gap-6 mt-6'>
+        <div className='p-3 text-black font-semibold text-center grid grid-cols-3 gap-10 mt-6'>
            
-            {meals.map(meal=><div className='border border-yellow-200 bg-white rounded p-2' key={meal.idMeal}>
-              <div className='max-w-50 flex flex-col items-center justify-center text-black'><img className="rounded"src={meal.strMealThumb}></img></div>
-              <p className='py-2'>{meal.strMeal}</p>
-              <button id={meal.idMeal} onClick={(e)=>handleMealClick(e)} className='bg-green-200 px-2 py-1 rounded'>View Details</button>
+            {meals.map(meal=><div className='max-w-60 grid gap-1 rounded-xl border border-none bg-lime-50  capitalize overflow-hidden' key={meal.idMeal}>
+               <div className='text-black rounded'><img clasName="object-cover rounded" src={meal.strMealThumb}></img></div>
+               <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
+              <div className='pb-5 flex items-center justify-center'>
+                  <button id={meal.idMeal} onClick={(e)=>handleMealClick(e)} className='bg-yellow-200 w-1/2 py-2 text-center text-xs rounded-full'>View Details</button>
+
+              </div>
             </div>)}
         </div>
         </div>):(
