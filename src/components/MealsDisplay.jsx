@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 const MealsDisplay = ({isdarkOn}) => {
@@ -59,7 +59,7 @@ const MealsDisplay = ({isdarkOn}) => {
                <div className='text-black rounded'><img className="object-cover rounded" src={meal.strMealThumb}></img></div>
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
               <div className='pb-5 flex items-center justify-center'>
-                  <button id={meal.idMeal} onClick={(e)=>handleMealClick(e)} className='bg-yellow-200 w-1/2 py-2 text-center text-xs rounded-full'>View Details</button>
+                  <Link className='bg-yellow-200 w-1/2 py-2 text-center text-xs rounded-full' to ={`recipe/${meal.idMeal}`}>View Details</Link>
 
               </div>
             </div>)}
