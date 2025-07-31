@@ -59,7 +59,7 @@ const MealsDisplay = ({isdarkOn}) => {
                <div className='text-black rounded'><img className="object-cover rounded" src={meal.strMealThumb}></img></div>
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
               <div className='pb-5 flex items-center justify-center'>
-                  <Link className='bg-yellow-200 w-1/2 py-2 text-center text-xs rounded-full' to ={`recipe/${meal.idMeal}`}>View Details</Link>
+                  <Link className='bg-yellow-200 w-1/3 py-1 text-center text-xs opacity-70 hover:opacity-100 rounded-full' to ={`recipe/${meal.idMeal}`}>View Details</Link>
 
               </div>
             </div>)}

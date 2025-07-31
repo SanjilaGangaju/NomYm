@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/" element={<MealsDisplay isdarkOn={isdarkOn}></MealsDisplay>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
-         <Route path="/recipe/:id" element={<RecipeDetail></RecipeDetail>}></Route>
+         <Route path="/recipe/:id" element={<RecipeDetail isdarkOn={isdarkOn}></RecipeDetail>}></Route>
         </Routes>
       </Router>
     
