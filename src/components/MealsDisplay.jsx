@@ -33,9 +33,9 @@ const MealsDisplay = ({isdarkOn}) => {
   return (
     <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-10 flex-col items-center gap-5 py-2'>
        <div className='bg-lime-50 overflow-hidden rounded-xl flex  items-center justify-center h-60 '>
-        <h1 className='text-3xl pl-5 font-serif'>Explore <span className='text-yellow-300'>Delicious</span> Recipes From All Around The World With NomYumm!</h1>
+        <h1 className='text-3xl pl-5 font-serif' data-aos="fade-right">Explore <span className='text-yellow-300'>Delicious</span> Recipes From All Around The World With NomYumm!</h1>
           <div>
-          <img className='outline-none object-top-center border-none'  src="src\components\hero-image2.png"></img>
+          <img className='outline-none object-top-center border-none' data-aos="fade-left" src="src\components\hero-image2.png"></img>
 
           </div>
        </div>
