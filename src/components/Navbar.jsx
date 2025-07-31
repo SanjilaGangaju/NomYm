@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-const Navbar = ({setisdarkOn, isdarkOn}) => {
+const Navbar = ({setisdarkOn, isdarkOn, inputValue, setinputValue, handleSubmit}) => {
     
   return (
    <div className="navbar-div  flex justify-between items-center px-6 py-7" style={{backgroundColor:isdarkOn?"#04030F":"white", color:isdarkOn?"white":"black"}}>
@@ -12,6 +12,7 @@ const Navbar = ({setisdarkOn, isdarkOn}) => {
             <Link to="/" className='transition ease-in-out duration-100 hover:text-yellow-300'>home</Link>
             <Link to="/about" className='transition ease-in-out duration-100 hover:text-yellow-300'>about us</Link>
             <Link to="/blog"  className='transition ease-in-out duration-100 hover:text-yellow-300'>blog</Link>
+            <form onSubmit={handleSubmit}><input type="text" value={inputValue} className='border px-2 border-yellow-200 rounded' placeholder=" Search any dish" onChange={(e)=>{setinputValue(e.target.value)}}></input></form>
           
 
         </nav>

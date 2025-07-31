@@ -7,17 +7,42 @@ import About from './components/About';
 import Blog from './components/blog';
 import MealRecipe from './components/mealRecipe';
 import RecipeDetail from './components/RecipeDetail';
+
 const App = () => {
   const [isdarkOn, setisdarkOn] = useState(false);
+  const [inputValue, setinputValue] = useState("");
+  const [meals, setmeals] = useState([]);
+  const [isSearching, setisSearching] = useState(false);
+
+   
+   const fetchDataApi = async(inputValue)=>{
+          
+           const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
+         
+           const data = await response.json();
+           
+           setmeals(data.meals || []);
+           setisSearching(true);
+
+     }
+    
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+     if(!inputValue.trim())return;
+    fetchDataApi(inputValue.trim());
+    setinputValue("");
+    
+
+  }
   return (
     <div>
       <Router>
-        <Navbar setisdarkOn={setisdarkOn} isdarkOn={isdarkOn}></Navbar>
+        <Navbar setisdarkOn={setisdarkOn} inputValue={inputValue} setinputValue={setinputValue} handleSubmit={handleSubmit} isdarkOn={isdarkOn}></Navbar>
         <Routes>
-          <Route path="/" element={<MealsDisplay isdarkOn={isdarkOn}></MealsDisplay>}></Route>
+          <Route path="/" element={<MealsDisplay isdarkOn={isdarkOn} isSearching={isSearching} setisSearching={setisSearching} meals={meals} setmeals={setmeals} inputValue={inputValue}></MealsDisplay>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
-         <Route path="/recipe/:id" element={<RecipeDetail isdarkOn={isdarkOn}></RecipeDetail>}></Route>
+         <Route path="/recipe/:id" element={<RecipeDetail isdarkOn={isdarkOn} inputValue={inputValue}></RecipeDetail>}></Route>
         </Routes>
       </Router>
     
