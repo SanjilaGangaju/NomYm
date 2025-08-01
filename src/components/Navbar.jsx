@@ -10,11 +10,11 @@ const Navbar = ({setisdarkOn, isdarkOn, inputValue, setinputValue, handleSubmit}
         <Link to='/'><span className='font-bold text-center text-2xl opacity-70' >Nom</span><span className='font-bold text-2xl text-center text-yellow-200'>Yumm</span></Link></div>
     {hamOn&&(
         <div className='middle-div absolute top-16 left-0 w-full border-t border-gray-100 px-4 py-4 md:hidden bg-white ' style={{backgroundColor:isdarkOn?"#04030F":"white", color:isdarkOn?"white":"black"}}>
-        <nav className='flex flex-col gap-4 font-serif capitalize text-m pr-5 items-end justify-center'>
+        <nav className='flex flex-col gap-3 font-serif capitalize text-m pr-5 items-end justify-center'>
             <Link to="/" className='transition ease-in-out duration-100 hover:text-yellow-300'>home</Link>
             <Link to="/about" className='transition ease-in-out duration-100 hover:text-yellow-300'>about us</Link>
             <Link to="/blog"  className='transition ease-in-out duration-100 hover:text-yellow-300'>blog</Link>
-            <form onSubmit={handleSubmit}><input type="text" value={inputValue} className='border px-2 border-yellow-200 rounded' placeholder=" Search any dish" onChange={(e)=>{setinputValue(e.target.value)}}></input></form>
+            <form onSubmit={handleSubmit}><input type="text" value={inputValue} className='border px-2 py-1 text-[0.8rem] border-yellow-300 rounded  placeholder:text-[0.8rem] placeholder:text-center focus:outline-none' placeholder=" Search any dish" onChange={(e)=>{setinputValue(e.target.value)}}></input></form>
           
 
         </nav>
