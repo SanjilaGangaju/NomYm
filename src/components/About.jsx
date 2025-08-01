@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About = () => {
+const About = ({isdarkOn}) => {
   return (
-    <div className="min-h-screen bg-white text-gray-800 px-6 py-12">
+    <div className="min-h-screen bg-white text-gray-800 px-6 py-12" style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
       <div className="max-w-4xl mx-auto space-y-8">
 
         <h1 className="text-4xl font-bold text-center text-yellow-500">About NomYumm</h1>

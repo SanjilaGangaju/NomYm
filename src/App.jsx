@@ -40,8 +40,8 @@ const App = () => {
         <Navbar setisdarkOn={setisdarkOn} inputValue={inputValue} setinputValue={setinputValue} handleSubmit={handleSubmit} isdarkOn={isdarkOn}></Navbar>
         <Routes>
           <Route path="/" element={<MealsDisplay isdarkOn={isdarkOn} isSearching={isSearching} setisSearching={setisSearching} meals={meals} setmeals={setmeals} inputValue={inputValue}></MealsDisplay>}></Route>
-          <Route path="/about" element={<About></About>}></Route>
-          <Route path="/blog" element={<Blog></Blog>}></Route>
+          <Route path="/about" element={<About isdarkOn={isdarkOn}></About>}></Route>
+          <Route path="/blog" element={<Blog isdarkOn={isdarkOn}></Blog>}></Route>
          <Route path="/recipe/:id" element={<RecipeDetail isdarkOn={isdarkOn} inputValue={inputValue}></RecipeDetail>}></Route>
         </Routes>
       </Router>

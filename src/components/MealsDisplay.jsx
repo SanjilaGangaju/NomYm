@@ -34,7 +34,7 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
       
     
   return (
-    <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-10 flex-col items-center gap-5 py-2'>
+    <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-10 flex-col items-center justify-center gap-5 py-2'>
        <div className='bg-lime-50 overflow-hidden rounded-xl flex  items-center justify-center h-60 '>
         <h1 className='text-3xl pl-5 font-serif' data-aos="fade-right">Explore <span className='text-yellow-300'>Delicious</span> Recipes From All Around The World With NomYumm!</h1>
           <div>
@@ -67,7 +67,7 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
                   <Link className='bg-yellow-200 w-1/3 py-1 text-center text-xs opacity-70 hover:opacity-100 rounded-full' to ={`recipe/${meal.idMeal}`}>View Details</Link>
 
               </div>
-            </div>):<p>No Dish</p>}
+            </div>):<div className="flex items-center m-auto justify-center text-2xl "><p className='text-center font-semibold opacity-70'>Couldnot Find the Dish You are Looking For</p></div>}
         </div>
         </div>
         
