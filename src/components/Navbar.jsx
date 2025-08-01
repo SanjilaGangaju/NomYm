@@ -9,7 +9,7 @@ const Navbar = ({setisdarkOn, isdarkOn, inputValue, setinputValue, handleSubmit}
     <div className='brand-logo'>
         <Link to='/'><span className='font-bold text-center text-2xl opacity-70' >Nom</span><span className='font-bold text-2xl text-center text-yellow-200'>Yumm</span></Link></div>
     {hamOn&&(
-        <div className='middle-div absolute top-16 left-0 w-full border-t border-gray-100 px-4 py-4 md:hidden bg-white ' style={{backgroundColor:isdarkOn?"#04030F":"white", color:isdarkOn?"white":"black"}}>
+        <div className='middle-div absolute top-16 left-0 w-full border-t z-50 border-gray-100 px-4 py-4 md:hidden bg-white' style={{backgroundColor:isdarkOn?"#04030F":"white", color:isdarkOn?"white":"black"}}>
         <nav className='flex flex-col gap-3 font-serif capitalize text-m pr-5 items-end justify-center'>
             <Link to="/" className='transition ease-in-out duration-100 hover:text-yellow-300'>home</Link>
             <Link to="/about" className='transition ease-in-out duration-100 hover:text-yellow-300'>about us</Link>
