@@ -49,14 +49,14 @@ const blogPosts = [
 
 const Blog = ({isdarkOn}) => {
   return (
-    <div className="min-h-screen bg-white px-6 py-12 text-gray-800 " style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-white px-6 py-5 text-gray-800 " style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
+      <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-yellow-500 mb-6">NomYumm Blog</h1>
         <p className="text-center text-lg text-gray-600 mb-12">
           Real kitchen tips, food stories, and helpful ideas to inspire your meals.
         </p>
 
-        <div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 items-center justify-center gap-2">
           {blogPosts.map((post, index) => (
             <div
               key={index}

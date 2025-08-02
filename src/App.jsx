@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import MealsDisplay from './components/MealsDisplay'
 import { useState } from 'react';
-
+import './components/index.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Blog from './components/blog';
