@@ -49,21 +49,21 @@ const blogPosts = [
 
 const Blog = ({isdarkOn}) => {
   return (
-    <div className="min-h-screen bg-white px-6 py-5 text-gray-800 " style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
-      <div className="max-w-2xl mx-auto">
+    <div className=" bg-white px-6 py-5 text-gray-800 " style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
+      <div className="mx-auto">
         <h1 className="text-4xl font-bold text-center text-yellow-500 mb-6">NomYumm Blog</h1>
         <p className="text-center text-lg text-gray-600 mb-12">
           Real kitchen tips, food stories, and helpful ideas to inspire your meals.
         </p>
 
-        <div className="grid grid-cols-1 items-center justify-center gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 md:gap-4">
           {blogPosts.map((post, index) => (
             <div
               key={index}
               data-aos="zoom-in"
-              className="bg-white border border-gray-300 p-4 shadow-sm hover:shadow-md transition aspect-square flex flex-col"
+              className="bg-white border md:h-94 border-gray-300 p-3 shadow-sm hover:shadow-md transition flex flex-col"
             >
-              <div className=" h-50 bg-gray-100 mb-2">
+              <div className="bg-gray-100 mb-2">
                 <img
                   src={post.image}
                   alt={post.title}
