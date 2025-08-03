@@ -4,16 +4,16 @@ Purpose : a food recipe app that helps users discover meals by area or ingredien
 
 
 Core Features:
-Search meals by name
+Search meals by name ✔️
 filter meals by area ✔️
 click a mean to see full recipe details ✔️
-display ingredients ,
+display ingredients ,(pending)
  instructions✔️ and 
 yt video maybe✔️
 
 
 Nice to have (chatgpt)
-save fav meals (local)
+save fav meals (local)(pending)
 filter/search by ingredient or category✔️
 surprise me (random meal)✔️
 dark mode or theme switcher✔️

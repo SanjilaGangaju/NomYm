@@ -43,7 +43,7 @@ const blogPosts = [
     title: "Making Pasta From Scratch (It’s Easier Than You Think)",
     content:
       "Homemade pasta sounds fancy, but it’s simple. Flour, eggs, and a little time — no machine needed.",
-    image: "https://pastaevangelists.com/cdn/shop/articles/Homemade_pasta.png?v=1660128738&width=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiz9Jq8gP9kHM8Xge72Mo2d-q9MDQiSoq_qQ&s",
   },
 ];
 
@@ -56,7 +56,7 @@ const Blog = ({isdarkOn}) => {
           Real kitchen tips, food stories, and helpful ideas to inspire your meals.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 md:gap-6">
           {blogPosts.map((post, index) => (
             <div
               key={index}
