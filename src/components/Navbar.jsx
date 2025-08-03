@@ -22,7 +22,7 @@ const Navbar = ({setisdarkOn, isdarkOn, inputValue, setinputValue, handleSubmit}
         <div className='hidden md:flex items-center justify-center middle-div  w-full  px-4 py-4 bg-white' style={{backgroundColor:isdarkOn?"#04030F":"white", color:isdarkOn?"white":"black"}}>
         <nav className='flex  gap-10 font-serif capitalize text-m pr-5 items-center justify-center'>
             <Navlinks></Navlinks>
-            <form onSubmit={handleSubmit}><input type="text" value={inputValue} className='border px-1 py-1 text-[0.8rem] border-yellow-300 rounded  placeholder:text-[0.8rem] placeholder:text-center focus:outline-none' placeholder=" Search any dish" onChange={(e)=>setinputValue(e.target.value)}></input></form>
+            <form onSubmit={handleSubmit}><input type="text" value={inputValue} className={`border px-1 py-1 text-[0.8rem] border-yellow-300 rounded  placeholder:text-[0.8rem] placeholder:text-center ${isdarkOn?'placeholder:text-white':'placeholder:text-black'} focus:outline-none`} placeholder=" Search any dish" onChange={(e)=>setinputValue(e.target.value)}></input></form>
 
           
 
