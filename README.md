@@ -10,3 +10,11 @@ with responsive  and user friendly design
 * Surprise Button that surprises with random recipe
 * Dark mode on/off
 * Heart Favourite Recipe
+* Responsive Design
+
+## Tech Stack
+* ReactJs
+* TailwindCss
+* React Icons
+* Third Party Api Integration
+  
