@@ -4,6 +4,7 @@ import { FaHamburger } from "react-icons/fa";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 const Navbar = ({setisdarkOn, isdarkOn, inputValue, setinputValue, handleSubmit}) => {
     const[hamOn, sethamOn]=useState(false);
+    
     const Navlinks = ()=>(
         <>
             <Link to="/" className='transition ease-in-out duration-100 hover:text-yellow-300'>home</Link>

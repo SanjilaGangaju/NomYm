@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
 const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals, setmeals}) => {
-    
+    const [favorite, setFavorite] = useState(false);
     const [area, setArea] = useState("american");
     const navigate = useNavigate();
    useEffect(() => {
@@ -63,9 +65,13 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
            {meals.length>0? meals.map(meal=><div className='m-auto grid gap-2 rounded-xl border border-none outline-none bg-lime-50  capitalize overflow-hidden' key={meal.idMeal}>
                <div className='text-black rounded'><img className="w-full object-cover" src={meal.strMealThumb}></img></div>
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
-              <div className='pb-5 flex items-center justify-center'>
+              <div className='pb-5 w-full flex items-center justify-center gap-6'>
                   <Link className='bg-yellow-200 w-1/2 py-1 px-2 text-center text-xs opacity-90 hover:opacity-100 rounded' to ={`recipe/${meal.idMeal}`}>View Details</Link>
-
+                  <button onClick={()=>setFavorite(!(favorite))}>
+                      {favorite?<FaHeart></FaHeart>:<FaRegHeart className='text-[1.1rem]'/>}
+                   
+                    </button>
+                     
               </div>
             </div>):<div className="w-1/1 md:col-span-3 md:m-auto md:py-4 flex items-center m-auto justify-center md:text-center md:mx-10 text-2xl "><p className='text-center text-xl font-semibold opacity-70' style={{color: isdarkOn?"white":"black"}}>Couldnot Find the Dish You are Looking For</p></div>}
         </div>
