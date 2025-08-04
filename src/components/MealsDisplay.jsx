@@ -6,15 +6,17 @@ import { FaRegHeart } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
 const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals, setmeals}) => {
-    const [favorite, setFavorite] = useState(false);
+    const [favorite, setFavorite] = useState([]);
     const [area, setArea] = useState("american");
     const navigate = useNavigate();
+    
    useEffect(() => {
     if (isSearching) return;
      const fetchDataApi = async()=>{
            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
            const data = await response.json();
            setmeals(data.meals);
+           
 
      }
      fetchDataApi();
@@ -32,6 +34,11 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
      }
    const handleSurpriseMe = ()=>{
         randomMeal();
+    }
+    const handleFavourite=(value)=>{
+      setFavorite((prev)=>prev.includes(value)?prev.filter(item=>item !==value):[...prev, value])
+
+     
     }
       
     
@@ -67,9 +74,9 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
               <div className='pb-5 w-full flex items-center justify-center gap-6'>
                   <Link className='bg-yellow-200 w-1/2 py-1 px-2 text-center text-xs opacity-90 hover:opacity-100 rounded' to ={`recipe/${meal.idMeal}`}>View Details</Link>
-                  <button onClick={()=>setFavorite(!(favorite))}>
-                      {favorite?<FaHeart></FaHeart>:<FaRegHeart className='text-[1.1rem]'/>}
-                   
+                  <button id={meals.idMeal} onClick={()=>handleFavourite(meal.idMeal)}>
+                      {favorite.includes(meal.idMeal)?<FaHeart className=' text-red-400'></FaHeart>:<FaRegHeart className='text-[1.1rem] text-red-300'/>}
+                
                     </button>
                      
               </div>
