@@ -44,7 +44,7 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
     
   return (
     <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-4 pb-10 md:px-8 flex-col items-center justify-center gap-5 py-1'>
-       <div style={{backgroundColor: isdarkOn?"#161925":"white", color: isdarkOn?"white":"black"}} className='bg-lime-50 overflow-hidden rounded-xl flex  flex-col md:flex-row md:gap-2  justify-center h-70 gap-1'>
+       <div style={{backgroundColor: isdarkOn?"#04030F":"white", color: isdarkOn?"white":"black"}} className='bg-lime-50 overflow-hidden rounded-xl flex  flex-col md:flex-row md:gap-2  justify-center h-70 gap-1'>
         <h1 className='text-[1.2rem] md:m-auto md:text-center md:text-[1.9rem] md:px-7 px-4 pt-4 text-left font-serif' data-aos="zoom-in">Explore <span className='text-yellow-300 text-[1.2em] md:-text-[1.4rem'>Delicious</span> Recipes From All Around The World With NomYumm!</h1>
           <div className='w-full h-1/2'>
           <img className='w-full object-cover center' src="src\components\hero-image2.png" data-aos="zoom-in"></img>
