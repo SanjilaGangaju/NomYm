@@ -17,4 +17,6 @@ with responsive  and user friendly design
 * TailwindCss
 * React Icons
 * Third Party Api Integration
+
+  <p>Made with ❤️ By Sanjila Gangaju</p>
   
