@@ -18,5 +18,8 @@ with responsive  and user friendly design
 * React Icons
 * Third Party Api Integration
 
+  ## Resources
+  API -[https://www.themealdb.com/api.php]
+
   <p>Made with ❤️ By Sanjila Gangaju</p>
   
