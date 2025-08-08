@@ -6,7 +6,11 @@ import { FaRegHeart } from "react-icons/fa";
 
 import { useNavigate } from 'react-router-dom';
 const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals, setmeals}) => {
-    const [favorite, setFavorite] = useState([]);
+    const [favorite, setFavorite] = useState(()=>{
+      const storedFavorites = localStorage.getItem("favourites");
+
+      return storedFavorites&& storedFavorites !=="undefined"? JSON.parse(storedFavorites) : [];
+    });
     const [area, setArea] = useState("american");
     const navigate = useNavigate();
     
@@ -37,10 +41,14 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
     }
     const handleFavourite=(value)=>{
       setFavorite((prev)=>prev.includes(value)?prev.filter(item=>item !==value):[...prev, value])
+    
 
      
     }
-      
+    useEffect(()=>{
+        localStorage.setItem("favourites", JSON.stringify(favorite))
+    },[favorite])
+   
     
   return (
     <div style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}} className='flex px-4 pb-10 md:px-8 flex-col items-center justify-center gap-5 py-1'>
