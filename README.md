@@ -12,7 +12,8 @@ with responsive  and user friendly design. This project basically sums up the th
 * Heart Favourite Recipe
 * Responsive Design
 
-## Tech Stack
+## Tech Stack']
+** Vite
 * ReactJs
 * TailwindCss
 * React Icons
