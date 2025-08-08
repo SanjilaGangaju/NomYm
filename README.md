@@ -2,7 +2,7 @@
 
 ## Overview:
 A dynamic app built with Reactjs, Tailwind Css that successfully allows users to filter meals by area or search any recipe and also explore the meal and details of the recipe 
-with responsive  and user friendly design
+with responsive  and user friendly design. This project basically sums up the things i learnt during my react learning journey.
 
 ## Features:
 * Search any meal you like
