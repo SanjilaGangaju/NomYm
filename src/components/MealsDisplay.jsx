@@ -81,7 +81,7 @@ const MealsDisplay = ({isdarkOn, isSearching, setisSearching, inputValue, meals,
                <div className='text-black rounded'><img className="w-full object-cover" src={meal.strMealThumb}></img></div>
                <p className='px-3 font-bold opacity-70'>{meal.strMeal}</p>
               <div className='pb-5 w-full flex items-center justify-center gap-6'>
-                  <Link className='bg-yellow-200 w-1/2 py-1 px-2 text-center text-xs opacity-90 hover:opacity-100 rounded' to ={`recipe/${meal.idMeal}`}>View Details</Link>
+                  <Link className={`bg-yellow-200 w-1/2 py-1 px-2 text-center text-xs opacity-90 hover:opacity-100 rounded ${isdarkOn&&"text-black"}`} to ={`recipe/${meal.idMeal}`}>View Details</Link>
                   <button id={meals.idMeal} onClick={()=>handleFavourite(meal.idMeal)}>
                       {favorite.includes(meal.idMeal)?<FaHeart className=' text-red-400'></FaHeart>:<FaRegHeart className='text-[1.1rem] text-red-300'/>}
                 
