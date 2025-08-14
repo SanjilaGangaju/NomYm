@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './components/index.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import MealRecipe from './components/mealRecipe';
+
 import RecipeDetail from './components/RecipeDetail';
 import Blog from './components/Blog';
 
