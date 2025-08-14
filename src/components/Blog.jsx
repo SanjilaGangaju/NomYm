@@ -1,6 +1,11 @@
 import React from 'react';
 
-const blogPosts = [
+
+
+const Blog = ({isdarkOn}) => {
+
+
+    const blogPosts = [
   {
     title: "Quick Dinners When You’re Tired",
     content:
@@ -46,8 +51,6 @@ const blogPosts = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiz9Jq8gP9kHM8Xge72Mo2d-q9MDQiSoq_qQ&s",
   },
 ];
-
-const Blog = ({isdarkOn}) => {
   return (
     <div className=" bg-white px-6 py-5 text-gray-800 " style={{ backgroundColor: isdarkOn?"#04030F":"#fff", color: isdarkOn&&"black"}}>
       <div className="mx-auto">
@@ -84,4 +87,4 @@ const Blog = ({isdarkOn}) => {
   );
 };
 
-export default Blog;
+export default Blog
